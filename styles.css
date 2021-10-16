@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+:root {
+  --primary-gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+  --neutral-very-lb: hsl(240, 78%, 98%);
+  --neutral-light-greyish-blue: hsl(234, 14%, 74%);
+  --neutral-grayish-blue: hsl(233, 13%, 49%);
+  --neutral-dark-greyish-blue: hsl(232, 13%, 33%);
+  --ff-main: "Montserrat", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-main);
+}
+body {
+  position: relative;
+  background-color: var(--neutral-very-lb);
+  background-image: url(images/bg-top.svg);
+  background-position: 175px -30px;
+  background-repeat: no-repeat;
+  padding: 0 1.5rem;
+  scroll-behavior: smooth;
+}
+.test{
+  display: none;
+}
+.bg-image-top{
+  position: absolute;
+  z-index: -1;
+  top: -2rem;
+  right: -10rem;
+  max-width: 100%;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 4.25rem 0 4.5rem 0;
+}
+header h1{
+  margin-bottom: 2rem;
+}
+.timespan{
+  display: flex;
+  align-items: center;
+  color: var(--neutral-light-greyish-blue);
+}
+
+input[type="checkbox"]{
+  position: relative;
+  width: 3.5rem;
+  height: 2rem;
+  appearance: none;
+  background: #fff;
+  border-radius: 1.2rem;
+  margin: 0 1rem;
+  background: linear-gradient(to right, var(--primary-gradient));
+  cursor: pointer;
+  user-select: none;
+}
+input[type="checkbox"]::before{
+  content: " ";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  border-radius: 50%;
+  transform: scale(0.8);
+  transition: 0.15s ease-in;
+}
+input:checked[type="checkbox"]::before{
+  transform: scale(0.8) translateX(95%);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper__card{
+  display: flex;
+  flex-direction: column;
+  padding: 2.125rem 1.875rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1.9rem;
+  color: var(--neutral-dark-greyish-blue);
+}
+.wrapper__card h2 {
+  font-size: 1.2rem;
+}
+.pricing{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.price{
+  font-size: 3.25rem;
+  padding: 2.625rem 0;
+}
+.dollar{
+  font-size: 1.75rem;
+  padding: 0;
+  margin-right: 0.3rem;
+  max-height: 100%;
+}
+.wrapper__card button{
+  margin-top: 2rem;
+  border: none;
+  border-radius: .5rem;
+  background: linear-gradient(to right, var(--primary-gradient));
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+.wrapper__card button:active{
+  background: inherit;
+  border: 1px solid var(--neutral-dark-greyish-blue);
+  color: hsl(237, 63%, 64%);
+}
+.wrapper__card > * + *{
+  padding: 1.25rem 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 0.25px solid var(--neutral-light-greyish-blue);
+}
+.wrapper__card:nth-child(odd) {
+  background: #fff;
+}
+.wrapper__card:nth-child(even) {
+  background: linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+}
+.wrapper__card:nth-child(even) button{
+  background: #fff;
+  color: hsl(237, 63%, 64%);
+}
+.wrapper__card:nth-child(even) button:active{
+  background: inherit;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+@media only screen and (min-width: 68.75rem){
+  body{
+    position: relative;
+    background-position: 100% -30px;
+  }
+  .wrapper{
+    max-width: 65.625rem;
+    margin: 0 auto;
+    flex-direction: row;
+  }
+  .wrapper__card{
+    flex: 1;
+  }
+  .wrapper__card:nth-child(even){
+    transform: scale(1.05);
+  }
+}
